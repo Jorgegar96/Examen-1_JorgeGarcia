@@ -82,10 +82,7 @@ public class Familiar extends Persona{
         this.objects = objects;
     }
 
-    @Override
-    public String toString() {
-        return  rol;
-    }
+    
     
     
 }
