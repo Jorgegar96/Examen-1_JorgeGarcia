@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /*
@@ -19,7 +20,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         familiares = new ArrayList();
-        Kim = new Familiar();
+        personal = new ArrayList();
+        Kim = new Familiar("Admin", "Nada", 160, 80, "Kim", 30, 12345, "F", "Casada", "1234");
         initComponents();
     }
 
@@ -36,10 +38,100 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        tf_mensajebienvenida = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jl_edad = new javax.swing.JLabel();
+        jl_ID = new javax.swing.JLabel();
+        jl_sexo = new javax.swing.JLabel();
+        jl_estadocivil = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jb_crearfamiliar = new javax.swing.JButton();
         jb_crearpersonal = new javax.swing.JButton();
+        jl_alerta1 = new javax.swing.JLabel();
+        jb_modFam = new javax.swing.JButton();
+        jb_modPer = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jb_listFam = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jb_elimFam = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jb_listPer = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jb_elimPer = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
+        label1 = new java.awt.Label();
+        ventanaCrearFam = new javax.swing.JFrame();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        cb_fam = new javax.swing.JComboBox<>();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        tf_IDFam = new javax.swing.JTextField();
+        tf_nameFam = new javax.swing.JTextField();
+        tf_alturaFam = new javax.swing.JTextField();
+        tf_jobFam = new javax.swing.JTextField();
+        tf_pesoFam = new javax.swing.JTextField();
+        rb_mFam = new javax.swing.JRadioButton();
+        rb_fFam = new javax.swing.JRadioButton();
+        rb_casadoFam = new javax.swing.JRadioButton();
+        rb_solteroFam = new javax.swing.JRadioButton();
+        rb_divorciadoFam = new javax.swing.JRadioButton();
+        jLabel42 = new javax.swing.JLabel();
+        pf_passFam = new javax.swing.JPasswordField();
+        jb_agregarFam = new javax.swing.JButton();
+        jb_salirFam = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        ventanaCrearPersonal = new javax.swing.JFrame();
+        jLabel27 = new javax.swing.JLabel();
+        tf_nameper = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jdchooser_crearper = new com.toedter.calendar.JDateChooser();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        tf_IDper = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        rb_mPer = new javax.swing.JRadioButton();
+        rb_fPer = new javax.swing.JRadioButton();
+        jLabel32 = new javax.swing.JLabel();
+        rb_casadoPer = new javax.swing.JRadioButton();
+        rb_solteroPer = new javax.swing.JRadioButton();
+        rb_divorciadoPer = new javax.swing.JRadioButton();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        tf_ocupacion = new javax.swing.JTextField();
+        tf_entrada = new javax.swing.JTextField();
+        tf_salida = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        tf_semanas = new javax.swing.JTextField();
+        tf_sueldoPer = new javax.swing.JTextField();
+        jb_agregarPer = new javax.swing.JButton();
+        jb_salircrearPer = new javax.swing.JButton();
+        jLabel41 = new javax.swing.JLabel();
+        pf_passPer = new javax.swing.JPasswordField();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        jTextField3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -50,42 +142,224 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jTextField2.setText("jTextField2");
 
+        tf_mensajebienvenida.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        tf_mensajebienvenida.setText("Welcome User");
+
+        jLabel5.setText("Edad");
+
+        jLabel6.setText("ID");
+
+        jLabel7.setText("Sexo");
+
+        jLabel8.setText("Estado Civil");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null}
+            },
+            new String [] {
+                "Emisor", "Fecha", "Asunto", "Receptor"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        jl_edad.setText("jLabel9");
+
+        jl_ID.setText("jLabel10");
+
+        jl_sexo.setText("jLabel11");
+
+        jl_estadocivil.setText("jLabel12");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 375, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(tf_mensajebienvenida)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                                .addComponent(jl_estadocivil))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jl_sexo))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jl_ID))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jl_edad)))
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(tf_mensajebienvenida)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jl_edad))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jl_ID))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jl_sexo))
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(jl_estadocivil)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Pantalla Principal", jPanel1);
 
-        jb_crearfamiliar.setText("jButton1");
+        jb_crearfamiliar.setText("Crear");
+        jb_crearfamiliar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearfamiliarMouseClicked(evt);
+            }
+        });
+        jb_crearfamiliar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_crearfamiliarActionPerformed(evt);
+            }
+        });
 
-        jb_crearpersonal.setText("jButton2");
+        jb_crearpersonal.setText("Crear");
+        jb_crearpersonal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearpersonalMouseClicked(evt);
+            }
+        });
+        jb_crearpersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_crearpersonalActionPerformed(evt);
+            }
+        });
+
+        jl_alerta1.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jl_alerta1.setText("Alerta");
+
+        jb_modFam.setText("Modificar");
+
+        jb_modPer.setText("Modificar");
+
+        jLabel9.setText("Crear Familiar");
+
+        jLabel10.setText("Crear Personal");
+
+        jLabel11.setText("Modificar Familiares");
+
+        jLabel12.setText("Modificar Personal");
+
+        jb_listFam.setText("Listar");
+
+        jLabel13.setText("Listar Familiares");
+
+        jb_elimFam.setText("Eliminar");
+
+        jLabel14.setText("Eliminar Familiares");
+
+        jb_listPer.setText("Listar");
+
+        jLabel15.setText("Listar Personal");
+
+        jb_elimPer.setText("Eliminar");
+
+        jLabel16.setText("Eiminar Personal");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jb_crearfamiliar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
-                .addComponent(jb_crearpersonal)
-                .addGap(68, 68, 68))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel9)
+                        .addComponent(jl_alerta1))
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_modFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_crearfamiliar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_listFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_elimFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16))
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jb_modPer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_crearpersonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_listPer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_elimPer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(73, 73, 73))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(109, 109, 109)
+                .addGap(20, 20, 20)
+                .addComponent(jl_alerta1)
+                .addGap(9, 9, 9)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_crearfamiliar)
-                    .addComponent(jb_crearpersonal))
-                .addContainerGap(118, Short.MAX_VALUE))
+                    .addComponent(jLabel9)
+                    .addComponent(jb_crearpersonal)
+                    .addComponent(jLabel10))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_modFam)
+                    .addComponent(jLabel11)
+                    .addComponent(jb_modPer)
+                    .addComponent(jLabel12))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_listFam)
+                    .addComponent(jLabel13)
+                    .addComponent(jb_listPer)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_elimFam)
+                    .addComponent(jLabel14)
+                    .addComponent(jb_elimPer)
+                    .addComponent(jLabel16))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Gestion de Personas", jPanel2);
@@ -107,6 +381,207 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
+
+        label1.setText("label1");
+
+        ventanaCrearFam.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jLabel17.setText("Crear Familiar");
+        ventanaCrearFam.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 11, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel18.setText("Nombre");
+        ventanaCrearFam.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel19.setText("Fecha de Nacimiento");
+        ventanaCrearFam.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 104, -1, 14));
+
+        jLabel20.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel20.setText("ID");
+        ventanaCrearFam.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 169, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel21.setText("Sexo");
+        ventanaCrearFam.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 222, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel22.setText("Estado Civil");
+        ventanaCrearFam.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 271, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel23.setText("Rol");
+        ventanaCrearFam.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 42, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel24.setText("Trabajo");
+        ventanaCrearFam.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 103, -1, -1));
+
+        jLabel25.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel25.setText("Altura");
+        ventanaCrearFam.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 169, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel26.setText("Peso");
+        ventanaCrearFam.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 222, -1, -1));
+
+        cb_fam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Madre", "Padre", "Hermana", "Hermano", "Esposo" }));
+        ventanaCrearFam.getContentPane().add(cb_fam, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 65, 115, -1));
+        ventanaCrearFam.getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 130, 137, -1));
+        ventanaCrearFam.getContentPane().add(tf_IDFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 191, 120, -1));
+        ventanaCrearFam.getContentPane().add(tf_nameFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 100, -1));
+        ventanaCrearFam.getContentPane().add(tf_alturaFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 191, 100, -1));
+        ventanaCrearFam.getContentPane().add(tf_jobFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 130, 100, -1));
+        ventanaCrearFam.getContentPane().add(tf_pesoFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 244, 100, -1));
+
+        buttonGroup1.add(rb_mFam);
+        rb_mFam.setSelected(true);
+        rb_mFam.setText("M");
+        ventanaCrearFam.getContentPane().add(rb_mFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 243, -1, -1));
+
+        buttonGroup1.add(rb_fFam);
+        rb_fFam.setText("F");
+        ventanaCrearFam.getContentPane().add(rb_fFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 243, -1, -1));
+
+        buttonGroup2.add(rb_casadoFam);
+        rb_casadoFam.setText("Casado");
+        ventanaCrearFam.getContentPane().add(rb_casadoFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 292, -1, -1));
+
+        buttonGroup2.add(rb_solteroFam);
+        rb_solteroFam.setSelected(true);
+        rb_solteroFam.setText("Soltero");
+        ventanaCrearFam.getContentPane().add(rb_solteroFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 292, -1, -1));
+
+        buttonGroup2.add(rb_divorciadoFam);
+        rb_divorciadoFam.setText("Diverciado");
+        ventanaCrearFam.getContentPane().add(rb_divorciadoFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 292, -1, -1));
+
+        jLabel42.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel42.setText("Contraseña");
+        ventanaCrearFam.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        ventanaCrearFam.getContentPane().add(pf_passFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 100, -1));
+
+        jb_agregarFam.setText("Agregar");
+        jb_agregarFam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_agregarFamMouseClicked(evt);
+            }
+        });
+        ventanaCrearFam.getContentPane().add(jb_agregarFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+
+        jb_salirFam.setText("Salir");
+        ventanaCrearFam.getContentPane().add(jb_salirFam, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, -1));
+
+        ventanaCrearPersonal.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel27.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel27.setText("Nombre");
+        ventanaCrearPersonal.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 42, -1, -1));
+        ventanaCrearPersonal.getContentPane().add(tf_nameper, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 100, -1));
+
+        jLabel28.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel28.setText("Fecha de Nacimiento");
+        ventanaCrearPersonal.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 14));
+        ventanaCrearPersonal.getContentPane().add(jdchooser_crearper, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 137, -1));
+
+        jLabel29.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jLabel29.setText("Crear Personal");
+        ventanaCrearPersonal.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 11, -1, -1));
+
+        jLabel30.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel30.setText("ID");
+        ventanaCrearPersonal.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        ventanaCrearPersonal.getContentPane().add(tf_IDper, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 120, -1));
+
+        jLabel31.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel31.setText("Sexo");
+        ventanaCrearPersonal.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+
+        buttonGroup3.add(rb_mPer);
+        rb_mPer.setSelected(true);
+        rb_mPer.setText("M");
+        ventanaCrearPersonal.getContentPane().add(rb_mPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+
+        buttonGroup3.add(rb_fPer);
+        rb_fPer.setText("F");
+        ventanaCrearPersonal.getContentPane().add(rb_fPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+
+        jLabel32.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel32.setText("Estado Civil");
+        ventanaCrearPersonal.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 271, -1, -1));
+
+        buttonGroup2.add(rb_casadoPer);
+        rb_casadoPer.setText("Casado");
+        ventanaCrearPersonal.getContentPane().add(rb_casadoPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 292, -1, -1));
+
+        buttonGroup2.add(rb_solteroPer);
+        rb_solteroPer.setText("Soltero");
+        ventanaCrearPersonal.getContentPane().add(rb_solteroPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 292, -1, -1));
+
+        buttonGroup2.add(rb_divorciadoPer);
+        rb_divorciadoPer.setText("Diverciado");
+        ventanaCrearPersonal.getContentPane().add(rb_divorciadoPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 292, -1, -1));
+
+        jLabel33.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel33.setText("Ocupacion");
+        ventanaCrearPersonal.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+
+        jLabel34.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel34.setText("Horario");
+        ventanaCrearPersonal.getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
+
+        jLabel35.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel35.setText("Semanas Trabajando");
+        ventanaCrearPersonal.getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+
+        jLabel36.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel36.setText("Sueldo");
+        ventanaCrearPersonal.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
+
+        tf_ocupacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_ocupacionActionPerformed(evt);
+            }
+        });
+        ventanaCrearPersonal.getContentPane().add(tf_ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 100, -1));
+        ventanaCrearPersonal.getContentPane().add(tf_entrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 50, -1));
+        ventanaCrearPersonal.getContentPane().add(tf_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 50, -1));
+
+        jLabel37.setText("Entrada");
+        ventanaCrearPersonal.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
+
+        jLabel38.setText("Salida");
+        ventanaCrearPersonal.getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+
+        jLabel39.setText("am");
+        ventanaCrearPersonal.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
+
+        jLabel40.setText("pm");
+        ventanaCrearPersonal.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
+        ventanaCrearPersonal.getContentPane().add(tf_semanas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 70, -1));
+        ventanaCrearPersonal.getContentPane().add(tf_sueldoPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 70, -1));
+
+        jb_agregarPer.setText("Agregar");
+        jb_agregarPer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_agregarPerMouseClicked(evt);
+            }
+        });
+        ventanaCrearPersonal.getContentPane().add(jb_agregarPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
+
+        jb_salircrearPer.setText("Salir");
+        jb_salircrearPer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salircrearPerMouseClicked(evt);
+            }
+        });
+        ventanaCrearPersonal.getContentPane().add(jb_salircrearPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+
+        jLabel41.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel41.setText("Contraseña");
+        ventanaCrearPersonal.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        ventanaCrearPersonal.getContentPane().add(pf_passPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 110, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,6 +607,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jb_logInMouseExited(evt);
+            }
+        });
+        jb_logIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_logInActionPerformed(evt);
             }
         });
 
@@ -198,21 +678,185 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_logInMouseEntered
 
     private void jb_logInMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_logInMouseExited
-        this.jb_logIn.setBackground(Color.getHSBColor(240, 240, 240));
+        this.jb_logIn.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_jb_logInMouseExited
 
     private void jb_logInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_logInMouseClicked
-        if (usuarioExistente(this.tf_user.getText())){
-            if (contraseñaCorrespondiente(this.tf_user.getText(), this.pf_pass.getText())){
+        if (usuarioExistente(this.tf_user.getText())) {
+            if (contraseñaCorrespondiente(this.tf_user.getText(), this.pf_pass.getText())) {
                 this.setVisible(false);
-                
-            } else{
+                this.jl_ID.setText(logged.getID() + "");
+                this.jl_edad.setText(logged.getAge() + "");
+                this.jl_estadocivil.setText(logged.getEstado_civil());
+                this.jl_sexo.setText(logged.getSexo());
+                if (logged.equals(Kim)) {
+                    this.jb_crearfamiliar.setEnabled(true);
+                    this.jb_crearpersonal.setEnabled(true);
+                    this.jb_elimFam.setEnabled(true);
+                    this.jb_elimPer.setEnabled(true);
+                    this.jb_listFam.setEnabled(true);
+                    this.jb_listPer.setEnabled(true);
+                    this.jb_modFam.setEnabled(true);
+                    this.jb_modPer.setEnabled(true);
+                    this.jl_alerta1.setText("¿Qué deseas hacer Kim?");
+                } else {
+                    this.jb_crearfamiliar.setEnabled(false);
+                    this.jb_crearpersonal.setEnabled(false);
+                    this.jb_elimFam.setEnabled(false);
+                    this.jb_elimPer.setEnabled(false);
+                    this.jb_listFam.setEnabled(false);
+                    this.jb_listPer.setEnabled(false);
+                    this.jb_modFam.setEnabled(false);
+                    this.jb_modPer.setEnabled(false);
+                    this.jl_alerta1.setText("No tienes acceso.");
+                }
+                jFrame1.pack();
+                jFrame1.setVisible(true);
+                tf_mensajebienvenida.setText("Welcome " + logged);
+            } else {
                 JOptionPane.showMessageDialog(this, "Contraseña Incorrecta");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Usuario Inexistente");
         }
     }//GEN-LAST:event_jb_logInMouseClicked
+
+    private void jb_logInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_logInActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_logInActionPerformed
+
+    private void jb_crearpersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crearpersonalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_crearpersonalActionPerformed
+
+    private void jb_crearfamiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crearfamiliarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_crearfamiliarActionPerformed
+
+    private void tf_ocupacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_ocupacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_ocupacionActionPerformed
+
+    private void jb_crearfamiliarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearfamiliarMouseClicked
+        jFrame1.dispose();
+        this.ventanaCrearFam.pack();
+        this.ventanaCrearFam.setVisible(true);
+    }//GEN-LAST:event_jb_crearfamiliarMouseClicked
+
+    private void jb_crearpersonalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearpersonalMouseClicked
+        jFrame1.dispose();
+        this.ventanaCrearPersonal.pack();
+        this.ventanaCrearPersonal.setVisible(true);
+
+    }//GEN-LAST:event_jb_crearpersonalMouseClicked
+
+    private void jb_agregarPerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarPerMouseClicked
+        try {
+            if (!this.tf_nameper.equals("")) {
+                if (!this.tf_ocupacion.equals("")) {
+                    if (!this.tf_salida.equals("")) {
+                        if (!this.tf_entrada.equals("")) {
+                            if (!this.tf_sueldoPer.equals("")) {
+                                if (!this.pf_passPer.equals("")) {
+                                    if (!this.tf_semanas.equals("")) {
+                                        if (!this.tf_IDper.equals("")) {
+                                            String sexo;
+                                            if (this.rb_mPer.isSelected()) {
+                                                sexo = "M";
+                                            } else {
+                                                sexo = "F";
+                                            }
+                                            String estado;
+                                            if (this.rb_casadoPer.isSelected()) {
+                                                estado = "Casado";
+                                            } else if (this.rb_divorciadoPer.isSelected()) {
+                                                estado = "Divorciado;";
+                                            } else {
+                                                estado = "Sotero";
+                                            }
+                                            personal.add(new Personal(this.tf_ocupacion.getText(), Integer.parseInt(this.tf_entrada.getText()),
+                                                    Integer.parseInt(this.tf_salida.getText()),
+                                                    this.jDateChooser1.getDate(), Integer.parseInt(this.tf_semanas.getText()),
+                                                    this.tf_nameper.getText(), Integer.parseInt(this.tf_IDper.getText()),
+                                                    sexo, estado, this.pf_passPer.getText()
+                                            ));
+                                            JOptionPane.showMessageDialog(this, "Persona creada!");
+                                            this.tf_nameper.setText("");
+                                            this.tf_ocupacion.setText("");
+                                            this.tf_salida.setText("");
+                                            this.tf_entrada.setText("");
+                                            this.tf_sueldoPer.setText("");
+                                            this.pf_passPer.setText("");
+                                            this.tf_semanas.setText("");
+                                            this.tf_IDper.setText("");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error y no se creó el contacto");
+        }
+    }//GEN-LAST:event_jb_agregarPerMouseClicked
+
+    private void jb_salircrearPerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salircrearPerMouseClicked
+        this.setVisible(true);
+        this.ventanaCrearPersonal.dispose();
+    }//GEN-LAST:event_jb_salircrearPerMouseClicked
+
+    private void jb_agregarFamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarFamMouseClicked
+        try {
+            if (!this.tf_nameFam.equals("")) {
+                if (!this.tf_jobFam.equals("")) {
+                    if (!this.tf_IDFam.equals("")) {
+                        if (!this.tf_pesoFam.equals("")) {
+                            if (!this.tf_alturaFam.equals("")) {
+                                if (!this.pf_passFam.equals("")) {
+                                    if (!this.tf_IDFam.equals("")) {
+                                        String sexo;
+                                        if (this.rb_mFam.isSelected()) {
+                                            sexo = "M";
+                                        } else {
+                                            sexo = "F";
+                                        }
+                                        String estado;
+                                        if (this.rb_casadoFam.isSelected()) {
+                                            estado = "Casado";
+                                        } else if (this.rb_divorciadoFam.isSelected()) {
+                                            estado = "Divorciado;";
+                                        } else {
+                                            estado = "Sotero";
+                                        }
+                                        DefaultComboBoxModel model = (DefaultComboBoxModel) cb_fam.getModel();
+                                        familiares.add(new Familiar(model.getSelectedItem() + "", this.tf_jobFam.getText(),
+                                                Integer.parseInt(this.tf_alturaFam.getText()), Integer.parseInt(this.tf_pesoFam.getText()),
+                                                this.tf_nameFam.getText(), this.jDateChooser1.getDate(), 
+                                                 Integer.parseInt(this.tf_IDFam.getText()),
+                                                sexo, estado, this.pf_passPer.getText()
+                                        ));
+                                        JOptionPane.showMessageDialog(this, "Persona creada!");
+                                        this.tf_nameper.setText("");
+                                        this.tf_ocupacion.setText("");
+                                        this.tf_salida.setText("");
+                                        this.tf_entrada.setText("");
+                                        this.tf_sueldoPer.setText("");
+                                        this.pf_passPer.setText("");
+                                        this.tf_semanas.setText("");
+                                        this.tf_IDper.setText("");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error y no se creó el contacto");
+        }
+    }//GEN-LAST:event_jb_agregarFamMouseClicked
 
     /**
      * @param args the command line arguments
@@ -250,21 +894,111 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JComboBox<String> cb_fam;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton jb_agregarFam;
+    private javax.swing.JButton jb_agregarPer;
     private javax.swing.JButton jb_crearfamiliar;
     private javax.swing.JButton jb_crearpersonal;
+    private javax.swing.JButton jb_elimFam;
+    private javax.swing.JButton jb_elimPer;
+    private javax.swing.JButton jb_listFam;
+    private javax.swing.JButton jb_listPer;
     private javax.swing.JButton jb_logIn;
+    private javax.swing.JButton jb_modFam;
+    private javax.swing.JButton jb_modPer;
+    private javax.swing.JButton jb_salirFam;
+    private javax.swing.JButton jb_salircrearPer;
+    private com.toedter.calendar.JDateChooser jdchooser_crearper;
+    private javax.swing.JLabel jl_ID;
+    private javax.swing.JLabel jl_alerta1;
+    private javax.swing.JLabel jl_edad;
+    private javax.swing.JLabel jl_estadocivil;
+    private javax.swing.JLabel jl_sexo;
+    private java.awt.Label label1;
     private javax.swing.JPasswordField pf_pass;
+    private javax.swing.JPasswordField pf_passFam;
+    private javax.swing.JPasswordField pf_passPer;
+    private javax.swing.JRadioButton rb_casadoFam;
+    private javax.swing.JRadioButton rb_casadoPer;
+    private javax.swing.JRadioButton rb_divorciadoFam;
+    private javax.swing.JRadioButton rb_divorciadoPer;
+    private javax.swing.JRadioButton rb_fFam;
+    private javax.swing.JRadioButton rb_fPer;
+    private javax.swing.JRadioButton rb_mFam;
+    private javax.swing.JRadioButton rb_mPer;
+    private javax.swing.JRadioButton rb_solteroFam;
+    private javax.swing.JRadioButton rb_solteroPer;
+    private javax.swing.JTextField tf_IDFam;
+    private javax.swing.JTextField tf_IDper;
+    private javax.swing.JTextField tf_alturaFam;
+    private javax.swing.JTextField tf_entrada;
+    private javax.swing.JTextField tf_jobFam;
+    private javax.swing.JLabel tf_mensajebienvenida;
+    private javax.swing.JTextField tf_nameFam;
+    private javax.swing.JTextField tf_nameper;
+    private javax.swing.JTextField tf_ocupacion;
+    private javax.swing.JTextField tf_pesoFam;
+    private javax.swing.JTextField tf_salida;
+    private javax.swing.JTextField tf_semanas;
+    private javax.swing.JTextField tf_sueldoPer;
     private javax.swing.JTextField tf_user;
+    private javax.swing.JFrame ventanaCrearFam;
+    private javax.swing.JFrame ventanaCrearPersonal;
     // End of variables declaration//GEN-END:variables
     private ArrayList<Familiar> familiares;
     private ArrayList<Personal> personal;
@@ -282,7 +1016,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 return true;
             }
         }
-        if (Kim.getName().equals(username)){
+        if (Kim.getName().equals(username)) {
             return true;
         }
         return false;
@@ -301,7 +1035,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 return true;
             }
         }
-        if (Kim.getName().equals(username) && Kim.getPassword().equals(password)){
+        if (Kim.getName().equals(username) && Kim.getPassword().equals(password)) {
             logged = Kim;
             return true;
         }

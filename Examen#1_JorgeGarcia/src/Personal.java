@@ -1,3 +1,6 @@
+
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,15 +17,19 @@ public class Personal extends Persona{
     private int horario_trabajo;
     private int semanasTrabajando;
     private float sueldo;
+    private int entrada;
+    private int salida;
+    private Date nacimiento;
 
     public Personal() {
         super();
     }
 
-    public Personal(String ocupacion, int horario_trabajo, int semanasTrabajando, String name, int age, int ID, String sexo, String estado_civil, String password) {
-        super(name, age, ID, sexo, estado_civil, password);
+    public Personal(String ocupacion, int entrada, int salida, Date fecha, int semanasTrabajando, String name, int ID, String sexo, String estado_civil, String password) {
+        super(name, fecha, ID, sexo, estado_civil, password);
         this.ocupacion = ocupacion;
-        this.horario_trabajo = horario_trabajo;
+        this.entrada = entrada;
+        this.salida = salida;
         this.semanasTrabajando = semanasTrabajando;
     }
 

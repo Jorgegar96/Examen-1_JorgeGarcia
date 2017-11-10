@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,6 +16,7 @@ public class Persona {
   //Nombre, Edad, ID, un Sexo, Estado civil y una lista de mensajes
     private String name;
     private String password;
+    private Date fecha_nacimiento;
     private int age;
     private int ID;
     private String sexo;
@@ -24,8 +26,19 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String name, int age, int ID, String sexo, String estado_civil, String password) {
+    public Persona(String name, Date nacimiento, int ID, String sexo, String estado_civil, String password) {
         this.name = name;
+        this.fecha_nacimiento = nacimiento;
+        setAge();
+        this.ID = ID;
+        this.sexo = sexo;
+        this.estado_civil = estado_civil;
+        this.password = password;
+    }
+
+    public Persona(String name,  int age, int ID, String sexo, String estado_civil, String password) {
+        this.name = name;
+        this.password = password;
         this.age = age;
         this.ID = ID;
         this.sexo = sexo;
@@ -44,8 +57,8 @@ public class Persona {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAge() {
+        this.age = (int)(fecha_nacimiento.getTime() - (new Date()).getTime() / (1000*60*60*24*365));
     }
 
     public int getID() {

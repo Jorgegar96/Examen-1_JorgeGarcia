@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,6 +26,14 @@ public class Familiar extends Persona{
 
     public Familiar(String rol, String trabajo, float altura, float peso, String name, int age, int ID, String sexo, String estado_civil, String password) {
         super(name, age, ID, sexo, estado_civil, password);
+        this.rol = rol;
+        this.trabajo = trabajo;
+        this.altura = altura;
+        this.peso = peso;
+    }
+
+    public Familiar(String rol, String trabajo, float altura, float peso, String name, Date nacimiento, int ID, String sexo, String estado_civil, String password) {
+        super(name, nacimiento, ID, sexo, estado_civil, password);
         this.rol = rol;
         this.trabajo = trabajo;
         this.altura = altura;
