@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Persona {
   //Nombre, Edad, ID, un Sexo, Estado civil y una lista de mensajes
     private String name;
+    private String password;
     private int age;
     private int ID;
     private String sexo;
@@ -23,7 +24,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String name, int age, int ID, String sexo, String estado_civil) {
+    public Persona(String name, int age, int ID, String sexo, String estado_civil, String password) {
         this.name = name;
         this.age = age;
         this.ID = ID;
@@ -77,6 +78,14 @@ public class Persona {
 
     public void setMensajes(ArrayList<Mensaje> mensajes) {
         this.mensajes = mensajes;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

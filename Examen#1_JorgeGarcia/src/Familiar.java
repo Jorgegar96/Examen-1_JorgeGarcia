@@ -23,8 +23,8 @@ public class Familiar extends Persona{
         super();
     }
 
-    public Familiar(String rol, String trabajo, float altura, float peso, String name, int age, int ID, String sexo, String estado_civil) {
-        super(name, age, ID, sexo, estado_civil);
+    public Familiar(String rol, String trabajo, float altura, float peso, String name, int age, int ID, String sexo, String estado_civil, String password) {
+        super(name, age, ID, sexo, estado_civil, password);
         this.rol = rol;
         this.trabajo = trabajo;
         this.altura = altura;

@@ -19,8 +19,8 @@ public class Personal extends Persona{
         super();
     }
 
-    public Personal(String ocupacion, int horario_trabajo, int semanasTrabajando, String name, int age, int ID, String sexo, String estado_civil) {
-        super(name, age, ID, sexo, estado_civil);
+    public Personal(String ocupacion, int horario_trabajo, int semanasTrabajando, String name, int age, int ID, String sexo, String estado_civil, String password) {
+        super(name, age, ID, sexo, estado_civil, password);
         this.ocupacion = ocupacion;
         this.horario_trabajo = horario_trabajo;
         this.semanasTrabajando = semanasTrabajando;

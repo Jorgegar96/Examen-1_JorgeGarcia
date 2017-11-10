@@ -1,9 +1,13 @@
+
+import java.util.ArrayList;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author JorgeLuis
@@ -14,6 +18,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
+        familiares = new ArrayList();
+        Kim = new Familiar();
         initComponents();
     }
 
@@ -26,21 +32,187 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField2 = new javax.swing.JTextField();
+        jFrame1 = new javax.swing.JFrame();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jb_crearfamiliar = new javax.swing.JButton();
+        jb_crearpersonal = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jb_logIn = new javax.swing.JButton();
+        tf_user = new javax.swing.JTextField();
+        pf_pass = new javax.swing.JPasswordField();
+
+        jTextField2.setText("jTextField2");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 375, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Pantalla Principal", jPanel1);
+
+        jb_crearfamiliar.setText("jButton1");
+
+        jb_crearpersonal.setText("jButton2");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jb_crearfamiliar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                .addComponent(jb_crearpersonal)
+                .addGap(68, 68, 68))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_crearfamiliar)
+                    .addComponent(jb_crearpersonal))
+                .addContainerGap(118, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Gestion de Personas", jPanel2);
+        jTabbedPane1.addTab("Gestion de Objetos", jScrollPane1);
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel1.setText("Casa de Kim : Sistema");
+
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jLabel2.setText("Log In");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("User");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setText("Password");
+
+        jb_logIn.setText("Enter");
+        jb_logIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_logInMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_logInMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_logInMouseExited(evt);
+            }
+        });
+
+        tf_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_userActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(175, 175, 175)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_logIn)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(pf_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                                .addComponent(tf_user)))))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel2)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(pf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jb_logIn)
+                .addGap(47, 47, 47))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tf_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_userActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_userActionPerformed
+
+    private void jb_logInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_logInMouseEntered
+        this.jb_logIn.setBackground(Color.GRAY);
+    }//GEN-LAST:event_jb_logInMouseEntered
+
+    private void jb_logInMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_logInMouseExited
+        this.jb_logIn.setBackground(Color.getHSBColor(240, 240, 240));
+    }//GEN-LAST:event_jb_logInMouseExited
+
+    private void jb_logInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_logInMouseClicked
+        if (usuarioExistente(this.tf_user.getText())){
+            if (contraseñaCorrespondiente(this.tf_user.getText(), this.pf_pass.getText())){
+                this.setVisible(false);
+                
+            } else{
+                JOptionPane.showMessageDialog(this, "Contraseña Incorrecta");
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Usuario Inexistente");
+        }
+    }//GEN-LAST:event_jb_logInMouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +250,118 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton jb_crearfamiliar;
+    private javax.swing.JButton jb_crearpersonal;
+    private javax.swing.JButton jb_logIn;
+    private javax.swing.JPasswordField pf_pass;
+    private javax.swing.JTextField tf_user;
     // End of variables declaration//GEN-END:variables
+    private ArrayList<Familiar> familiares;
+    private ArrayList<Personal> personal;
+    public Persona logged;
+    public Familiar Kim;
+
+    public boolean usuarioExistente(String username) {
+        for (Familiar familiar : familiares) {
+            if (familiar.getName().equals(username)) {
+                return true;
+            }
+        }
+        for (Personal personal1 : personal) {
+            if (personal1.getName().equals(username)) {
+                return true;
+            }
+        }
+        if (Kim.getName().equals(username)){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean contraseñaCorrespondiente(String username, String password) {
+        for (Familiar familiar : familiares) {
+            if (familiar.getName().equals(username) && familiar.getPassword().equals(password)) {
+                logged = familiar;
+                return true;
+            }
+        }
+        for (Personal personal1 : personal) {
+            if (personal1.getName().equals(username) && personal1.getPassword().equals(password)) {
+                logged = personal1;
+                return true;
+            }
+        }
+        if (Kim.getName().equals(username) && Kim.getPassword().equals(password)){
+            logged = Kim;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean familiaresLlenos() {
+        if (familiares.size() >= 8) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean madreLlena() {
+        for (Familiar familiar : familiares) {
+            if (familiar.getRol().equals("Madre")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean padreLleno() {
+        for (Familiar familiar : familiares) {
+            if (familiar.getRol().equals("Padre")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hermanoLleno() {
+        for (Familiar familiar : familiares) {
+            if (familiar.getRol().equals("Hermano")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean esposoLleno() {
+        for (Familiar familiar : familiares) {
+            if (familiar.getRol().equals("Esposo")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hermanasLlenas() {
+        int cont_h = 0;
+        for (Familiar familiar : familiares) {
+            if (familiar.getRol().equals("Hermana")) {
+                cont_h++;
+                if (cont_h >= 4) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
