@@ -6,12 +6,12 @@ import java.awt.Color;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author JorgeLuis
  */
-public class Zapato extends Objeto{
+public class Zapato extends Objeto {
+
     // una talla, tipo de suela y confort (escala del 1 al 10).
     private String talla;
     private String tipo_suela;
@@ -25,7 +25,9 @@ public class Zapato extends Objeto{
         super(color, descripcion, marca, tamaño, calidad, precio, dueño);
         this.talla = talla;
         this.tipo_suela = tipo_suela;
-        this.confort = confort;
+        if (confort <= 10 && confort > 0) {
+            this.confort = confort;
+        }
     }
 
     public String getTalla() {
@@ -56,6 +58,5 @@ public class Zapato extends Objeto{
     public String toString() {
         return "Zapatos";
     }
-    
-    
+
 }

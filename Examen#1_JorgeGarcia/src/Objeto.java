@@ -6,13 +6,13 @@ import java.awt.Color;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author JorgeLuis
  */
 public class Objeto {
-     //color, descripción, marca, tamaño, calidad (escala de 1 a 10), precio y dueño
+    //color, descripción, marca, tamaño, calidad (escala de 1 a 10), precio y dueño
+
     private String color;
     private String descripcion;
     private String marca;
@@ -29,7 +29,9 @@ public class Objeto {
         this.descripcion = descripcion;
         this.marca = marca;
         this.tamaño = tamaño;
-        this.calidad = calidad;
+        if (calidad <= 10 && calidad > 0) {
+            this.calidad = calidad;
+        }
         this.precio = precio;
         this.dueño = dueño;
     }
@@ -94,6 +96,5 @@ public class Objeto {
     public String toString() {
         return "Objeto{" + "descripcion=" + descripcion + '}';
     }
-    
-    
+
 }
