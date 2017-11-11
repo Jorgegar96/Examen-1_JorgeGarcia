@@ -25,6 +25,30 @@ public class Personal extends Persona{
         super();
     }
 
+    public int getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(int entrada) {
+        this.entrada = entrada;
+    }
+
+    public int getSalida() {
+        return salida;
+    }
+
+    public void setSalida(int salida) {
+        this.salida = salida;
+    }
+
+    public Date getNacimiento() {
+        return nacimiento;
+    }
+
+    public void setNacimiento(Date nacimiento) {
+        this.nacimiento = nacimiento;
+    }
+
     public Personal(String ocupacion, int entrada, int salida, Date fecha, int semanasTrabajando, String name, int ID, String sexo, String estado_civil, String password) {
         super(name, fecha, ID, sexo, estado_civil, password);
         this.ocupacion = ocupacion;
