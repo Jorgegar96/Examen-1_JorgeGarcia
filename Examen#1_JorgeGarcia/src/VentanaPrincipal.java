@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.awt.Color;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -24,6 +25,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         personal = new ArrayList();
         Kim = new Familiar("Admin", "Nada", 160, 80, "Kim", 30, 12345, "F", "Casada", "1234");
         modelo = new DefaultTableModel();
+        mensajes = new DefaultTableModel();
         initComponents();
     }
 
@@ -46,13 +48,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_mensajes = new javax.swing.JTable();
         jl_edad = new javax.swing.JLabel();
         jl_ID = new javax.swing.JLabel();
         jl_sexo = new javax.swing.JLabel();
         jl_estadocivil = new javax.swing.JLabel();
         enviarMensaje = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jb_crearfamiliar = new javax.swing.JButton();
         jb_crearpersonal = new javax.swing.JButton();
@@ -224,11 +227,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         tabla_fam = new javax.swing.JTable();
         mensajeria = new javax.swing.JFrame();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ta_cuerpo = new javax.swing.JTextArea();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel77 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        tf_asunto = new javax.swing.JTextField();
+        jLabel78 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -251,9 +256,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel8.setText("Estado Civil");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_mensajes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null}
+
             },
             new String [] {
                 "Emisor", "Fecha", "Asunto", "Receptor"
@@ -267,7 +272,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tabla_mensajes);
 
         jl_edad.setText("jLabel9");
 
@@ -290,6 +295,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jButton6MouseClicked(evt);
             }
         });
+
+        jButton7.setText("Ver Mensaje");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -326,6 +333,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton6)
                         .addGap(41, 41, 41))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(49, 49, 49))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -354,7 +365,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jl_estadocivil)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Pantalla Principal", jPanel1);
@@ -482,7 +495,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(jb_listPer)
                     .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_elimFam)
                     .addComponent(jLabel14)
@@ -603,7 +616,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_calidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel72)
                     .addComponent(jLabel73))
@@ -1135,33 +1148,47 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        ta_cuerpo.setColumns(20);
+        ta_cuerpo.setRows(5);
+        jScrollPane3.setViewportView(ta_cuerpo);
 
         jLabel77.setText("Enviar a:");
 
         jButton4.setText("Enviar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton5.setText("Salir");
+
+        jLabel78.setText("Asunto");
 
         javax.swing.GroupLayout mensajeriaLayout = new javax.swing.GroupLayout(mensajeria.getContentPane());
         mensajeria.getContentPane().setLayout(mensajeriaLayout);
         mensajeriaLayout.setHorizontalGroup(
             mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mensajeriaLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel77)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(80, Short.MAX_VALUE))
-            .addGroup(mensajeriaLayout.createSequentialGroup()
                 .addGap(164, 164, 164)
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(35, 35, 35))
+            .addGroup(mensajeriaLayout.createSequentialGroup()
+                .addGroup(mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mensajeriaLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel77)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(mensajeriaLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel78)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_asunto, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         mensajeriaLayout.setVerticalGroup(
             mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1170,7 +1197,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel77)
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_asunto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel78))
+                .addGap(10, 10, 10)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1313,6 +1344,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     this.jb_modPer.setEnabled(false);
                     this.jl_alerta1.setText("No tienes acceso.");
                 }
+                refreshMensajes();
                 jFrame1.pack();
                 jFrame1.setVisible(true);
                 tf_mensajebienvenida.setText("Welcome " + logged);
@@ -1655,6 +1687,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void enviarMensajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarMensajeMouseClicked
         this.jFrame1.dispose();
+        refreshUsuarios();
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cb_listaFam.getModel();
+        mensajeria.pack();
         this.mensajeria.setVisible(true);
     }//GEN-LAST:event_enviarMensajeMouseClicked
 
@@ -1662,6 +1697,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jFrame1.dispose();
         this.setVisible(true);
     }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        try {
+            logged.getMensajes().add(new Mensaje(tf_asunto.getText(), ta_cuerpo.getText(), new Date(), logged, (Persona)this.cb_listaFam.getSelectedItem()));
+            ((Persona)this.cb_listaFam.getSelectedItem()).getMensajes().add(new Mensaje(tf_asunto.getText(), ta_cuerpo.getText(), new Date(), logged, (Persona)this.cb_listaFam.getSelectedItem()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al enviar!");
+        }
+        this.mensajeria.dispose();
+        jFrame1.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1714,6 +1760,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -1794,6 +1841,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -1803,8 +1851,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -1860,13 +1906,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_solteroFam1;
     private javax.swing.JRadioButton rb_solteroPer;
     private javax.swing.JRadioButton rb_solteroPer1;
+    private javax.swing.JTextArea ta_cuerpo;
     private javax.swing.JTable tabla_fam;
+    private javax.swing.JTable tabla_mensajes;
     private javax.swing.JTextField tf_IDFam;
     private javax.swing.JTextField tf_IDFam1;
     private javax.swing.JTextField tf_IDper;
     private javax.swing.JTextField tf_IDper1;
     private javax.swing.JTextField tf_alturaFam;
     private javax.swing.JTextField tf_alturaFam1;
+    private javax.swing.JTextField tf_asunto;
     private javax.swing.JTextField tf_calidad;
     private javax.swing.JTextField tf_color;
     private javax.swing.JTextField tf_confort;
@@ -1907,6 +1956,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public Familiar Kim;
     public DefaultComboBoxModel modelFam;
     DefaultTableModel modelo;
+    DefaultTableModel mensajes;
 
     public boolean usuarioExistente(String username) {
         for (Familiar familiar : familiares) {
@@ -2038,5 +2088,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             modelFam.addElement(personal1);
         }
         modelFam.addElement(Kim);
+    }
+    
+    public void refreshMensajes() {
+          while (mensajes.getRowCount() != 0) {
+            mensajes.removeRow(0);
+        }
+        for (Mensaje msg : logged.getMensajes()) {
+            Object[] newrow = {
+                msg.getEmisor(),
+                msg.getFecha(),
+                msg.getTitulo(),
+                msg.getReceptor()};
+            mensajes = (DefaultTableModel) tabla_mensajes.getModel();
+            mensajes.addRow(newrow);
+            tabla_mensajes.setModel(modelo);
+        }
     }
 }
