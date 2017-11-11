@@ -49,12 +49,13 @@ public class Personal extends Persona{
         this.nacimiento = nacimiento;
     }
 
-    public Personal(String ocupacion, int entrada, int salida, Date fecha, int semanasTrabajando, String name, int ID, String sexo, String estado_civil, String password) {
+    public Personal(String ocupacion, int entrada, int salida, Date fecha, int semanasTrabajando, String name, int ID, String sexo, String estado_civil, String password, float sueldo) {
         super(name, fecha, ID, sexo, estado_civil, password);
         this.ocupacion = ocupacion;
         this.entrada = entrada;
         this.salida = salida;
         this.semanasTrabajando = semanasTrabajando;
+        this.sueldo = sueldo;
     }
 
     public String getOcupacion() {

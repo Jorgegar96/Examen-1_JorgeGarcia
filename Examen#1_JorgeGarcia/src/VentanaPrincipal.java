@@ -55,7 +55,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jl_estadocivil = new javax.swing.JLabel();
         enviarMensaje = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        verMsg = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jb_crearfamiliar = new javax.swing.JButton();
         jb_crearpersonal = new javax.swing.JButton();
@@ -74,10 +74,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jb_elimPer = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        famMembers = new javax.swing.JComboBox<>();
+        perMembers = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        crearZapatos = new javax.swing.JButton();
+        crearRopa = new javax.swing.JButton();
+        crearHogar = new javax.swing.JButton();
         tf_precio = new javax.swing.JTextField();
         tf_color = new javax.swing.JTextField();
         tf_marca = new javax.swing.JTextField();
@@ -90,7 +92,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        dueño = new javax.swing.JComboBox<>();
         label1 = new java.awt.Label();
         ventanaCrearFam = new javax.swing.JFrame();
         jLabel17 = new javax.swing.JLabel();
@@ -231,10 +233,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel77 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        salirMensajeria = new javax.swing.JButton();
         tf_asunto = new javax.swing.JTextField();
         jLabel78 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        ropa = new javax.swing.JFrame();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        talla = new javax.swing.JTextField();
+        material = new javax.swing.JTextField();
+        pais = new javax.swing.JTextField();
+        nuevaRopa = new javax.swing.JButton();
+        hogar = new javax.swing.JFrame();
+        vida = new javax.swing.JTextField();
+        rb_sala = new javax.swing.JRadioButton();
+        rb_cocina = new javax.swing.JRadioButton();
+        rb_room = new javax.swing.JRadioButton();
+        instr = new javax.swing.JTextField();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        agregarHogar = new javax.swing.JButton();
+        buttonGroup4 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -261,11 +282,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Emisor", "Fecha", "Asunto", "Receptor"
+                "Emisor", "Fecha", "Asunto", "Receptor", "MSG"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -296,7 +317,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("Ver Mensaje");
+        verMsg.setText("Ver Mensaje");
+        verMsg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                verMsgMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -307,24 +333,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                                .addComponent(jl_estadocivil))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7))
+                        .addGap(48, 48, 48)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_estadocivil)
+                            .addComponent(jl_sexo, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jl_ID, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jl_sexo))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jl_ID))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(6, 6, 6)
                                 .addComponent(jl_edad)))
-                        .addGap(50, 50, 50)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(tf_mensajebienvenida)
@@ -335,7 +357,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(41, 41, 41))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addComponent(verMsg)
                 .addGap(49, 49, 49))
         );
         jPanel1Layout.setVerticalGroup(
@@ -366,7 +388,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(jl_estadocivil)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
+                .addComponent(verMsg)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -407,6 +429,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jb_modPer.setText("Modificar");
+        jb_modPer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modPerMouseClicked(evt);
+            }
+        });
 
         jLabel9.setText("Crear Familiar");
 
@@ -426,6 +453,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel13.setText("Listar Familiares");
 
         jb_elimFam.setText("Eliminar");
+        jb_elimFam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_elimFamMouseClicked(evt);
+            }
+        });
 
         jLabel14.setText("Eliminar Familiares");
 
@@ -434,6 +466,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel15.setText("Listar Personal");
 
         jb_elimPer.setText("Eliminar");
+        jb_elimPer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_elimPerMouseClicked(evt);
+            }
+        });
 
         jLabel16.setText("Eiminar Personal");
 
@@ -450,13 +487,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(jLabel13)
                     .addComponent(jLabel14))
-                .addGap(38, 38, 38)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_modFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_crearfamiliar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_listFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_elimFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(famMembers, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
+                        .addComponent(jb_elimFam, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_listFam, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jb_modFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jb_crearfamiliar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -464,13 +509,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(jLabel15)
                             .addComponent(jLabel16))
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jb_modPer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jb_crearpersonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jb_listPer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jb_elimPer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(73, 73, 73))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(perMembers, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jb_elimPer, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jb_modPer)
+                                    .addComponent(jb_listPer, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jb_crearpersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(40, 40, 40))))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -500,17 +551,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jb_elimFam)
                     .addComponent(jLabel14)
                     .addComponent(jb_elimPer)
-                    .addComponent(jLabel16))
+                    .addComponent(jLabel16)
+                    .addComponent(famMembers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(perMembers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Gestion de Personas", jPanel2);
 
-        jButton1.setText("Crear Zapatos");
+        crearZapatos.setText("Crear Zapatos");
+        crearZapatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearZapatosMouseClicked(evt);
+            }
+        });
 
-        jButton2.setText("Crear Ropa");
+        crearRopa.setText("Crear Ropa");
+        crearRopa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearRopaMouseClicked(evt);
+            }
+        });
 
-        jButton3.setText("Crear de Hogar");
+        crearHogar.setText("Crear de Hogar");
+        crearHogar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearHogarMouseClicked(evt);
+            }
+        });
 
         tf_color.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -546,23 +614,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel72)
-                .addGap(139, 139, 139)
-                .addComponent(jLabel73)
-                .addGap(72, 72, 72))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(95, 95, 95)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(dueño, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(crearRopa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(crearZapatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(crearHogar))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                        .addGap(66, 66, 66)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,23 +642,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addComponent(jLabel71)
                                 .addGap(83, 83, 83))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jLabel68)
-                        .addGap(133, 133, 133)
-                        .addComponent(jLabel69)
-                        .addGap(82, 82, 82))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel68)
+                                .addGap(133, 133, 133)
+                                .addComponent(jLabel69)
+                                .addGap(82, 82, 82))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel72)
+                                .addGap(139, 139, 139)
+                                .addComponent(jLabel73)
+                                .addGap(72, 72, 72))))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dueño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(jButton1)
+                .addComponent(crearZapatos)
                 .addGap(37, 37, 37)
-                .addComponent(jButton2)
+                .addComponent(crearRopa)
                 .addGap(30, 30, 30)
-                .addComponent(jButton3)
+                .addComponent(crearHogar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
@@ -854,7 +922,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ventanaModFam.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel43.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        jLabel43.setText("Crear Familiar");
+        jLabel43.setText("Modificar Familiar");
         ventanaModFam.getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 11, -1, -1));
 
         jLabel44.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
@@ -907,7 +975,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         rb_divorciadoFam1.setText("Diverciado");
         ventanaModFam.getContentPane().add(rb_divorciadoFam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 292, -1, -1));
 
-        jb_modSave.setText("Agregar");
+        jb_modSave.setText("Salvar");
         jb_modSave.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_modSaveMouseClicked(evt);
@@ -1161,7 +1229,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Salir");
+        salirMensajeria.setText("Salir");
+        salirMensajeria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirMensajeriaMouseClicked(evt);
+            }
+        });
 
         jLabel78.setText("Asunto");
 
@@ -1173,7 +1246,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(164, 164, 164)
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(salirMensajeria)
                 .addGap(35, 35, 35))
             .addGroup(mensajeriaLayout.createSequentialGroup()
                 .addGroup(mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1206,7 +1279,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(mensajeriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(salirMensajeria))
                 .addGap(21, 21, 21))
         );
 
@@ -1216,6 +1289,157 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+
+        jLabel79.setText("Talla");
+
+        jLabel80.setText("Material");
+
+        jLabel81.setText("País");
+
+        talla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tallaActionPerformed(evt);
+            }
+        });
+
+        material.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                materialActionPerformed(evt);
+            }
+        });
+
+        nuevaRopa.setText("Crear");
+        nuevaRopa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nuevaRopaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ropaLayout = new javax.swing.GroupLayout(ropa.getContentPane());
+        ropa.getContentPane().setLayout(ropaLayout);
+        ropaLayout.setHorizontalGroup(
+            ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ropaLayout.createSequentialGroup()
+                .addGroup(ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pais, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(talla, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ropaLayout.createSequentialGroup()
+                            .addGap(39, 39, 39)
+                            .addGroup(ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel81)
+                                .addComponent(jLabel79)
+                                .addComponent(jLabel80)))
+                        .addGroup(ropaLayout.createSequentialGroup()
+                            .addGap(47, 47, 47)
+                            .addComponent(material, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(146, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ropaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(nuevaRopa)
+                .addGap(47, 47, 47))
+        );
+        ropaLayout.setVerticalGroup(
+            ropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ropaLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(nuevaRopa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel79)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(talla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jLabel80)
+                .addGap(18, 18, 18)
+                .addComponent(material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel81)
+                .addGap(18, 18, 18)
+                .addComponent(pais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        buttonGroup4.add(rb_sala);
+        rb_sala.setSelected(true);
+        rb_sala.setText("Sala");
+
+        buttonGroup4.add(rb_cocina);
+        rb_cocina.setText("Cocina");
+
+        buttonGroup4.add(rb_room);
+        rb_room.setText("Habitacion");
+        rb_room.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_roomActionPerformed(evt);
+            }
+        });
+
+        jLabel82.setText("Tiempo de Vida");
+
+        jLabel83.setText("Lugar");
+
+        jLabel84.setText("Instrucciones");
+
+        agregarHogar.setText("Crear");
+        agregarHogar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarHogarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout hogarLayout = new javax.swing.GroupLayout(hogar.getContentPane());
+        hogar.getContentPane().setLayout(hogarLayout);
+        hogarLayout.setHorizontalGroup(
+            hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hogarLayout.createSequentialGroup()
+                .addGroup(hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(instr, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(hogarLayout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addGroup(hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel83)
+                                    .addGroup(hogarLayout.createSequentialGroup()
+                                        .addComponent(jLabel82)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(vida, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(hogarLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel84)
+                                    .addComponent(rb_sala))
+                                .addGap(10, 10, 10)
+                                .addComponent(rb_cocina)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_room))))
+                    .addGroup(hogarLayout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(agregarHogar)))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        hogarLayout.setVerticalGroup(
+            hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hogarLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(agregarHogar)
+                .addGap(28, 28, 28)
+                .addGroup(hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel82))
+                .addGap(31, 31, 31)
+                .addComponent(jLabel83)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(hogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rb_sala)
+                    .addComponent(rb_cocina)
+                    .addComponent(rb_room))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel84)
+                .addGap(11, 11, 11)
+                .addComponent(instr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1332,6 +1556,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     this.jb_listPer.setEnabled(true);
                     this.jb_modFam.setEnabled(true);
                     this.jb_modPer.setEnabled(true);
+                    tf_calidad.setEnabled(true);
+                    tf_marca.setEnabled(true);
+                    tf_precio.setEnabled(true);
+                    tf_color.setEnabled(true);
+                    tf_size.setEnabled(true);
+                    tf_desc.setEnabled(true);
+                    this.crearZapatos.setEnabled(true);
+                    this.nuevaRopa.setEnabled(true);
+                    this.agregarHogar.setEnabled(true);
                     this.jl_alerta1.setText("¿Qué deseas hacer Kim?");
                 } else {
                     this.jb_crearfamiliar.setEnabled(false);
@@ -1342,6 +1575,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     this.jb_listPer.setEnabled(false);
                     this.jb_modFam.setEnabled(false);
                     this.jb_modPer.setEnabled(false);
+                    tf_calidad.setEnabled(false);
+                    tf_marca.setEnabled(false);
+                    tf_precio.setEnabled(false);
+                    tf_color.setEnabled(false);
+                    tf_size.setEnabled(false);
+                    tf_desc.setEnabled(false);
+                    this.crearZapatos.setEnabled(false);
+                    this.nuevaRopa.setEnabled(false);
+                    this.agregarHogar.setEnabled(false);
                     this.jl_alerta1.setText("No tienes acceso.");
                 }
                 refreshMensajes();
@@ -1386,45 +1628,46 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_crearpersonalMouseClicked
 
     private void jb_agregarPerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarPerMouseClicked
-        try {
-            if (!this.tf_nameper.equals("")) {
-                if (!this.tf_ocupacion.equals("")) {
-                    if (!this.tf_salida.equals("")) {
-                        if (!this.tf_entrada.equals("")) {
-                            if (!this.tf_sueldoPer.equals("")) {
-                                if (!this.pf_passPer.equals("")) {
-                                    if (!this.tf_semanas.equals("")) {
-                                        if (!this.tf_IDper.equals("")) {
-                                            String sexo;
-                                            if (this.rb_mPer.isSelected()) {
-                                                sexo = "M";
-                                            } else {
-                                                sexo = "F";
-                                            }
-                                            String estado;
-                                            if (this.rb_casadoPer.isSelected()) {
-                                                estado = "Casado";
-                                            } else if (this.rb_divorciadoPer.isSelected()) {
-                                                estado = "Divorciado;";
-                                            } else {
-                                                estado = "Sotero";
-                                            }
-                                            personal.add(new Personal(this.tf_ocupacion.getText(), Integer.parseInt(this.tf_entrada.getText()),
-                                                    Integer.parseInt(this.tf_salida.getText()),
-                                                    this.jDateChooser1.getDate(), Integer.parseInt(this.tf_semanas.getText()),
-                                                    this.tf_nameper.getText(), Integer.parseInt(this.tf_IDper.getText()),
-                                                    sexo, estado, this.pf_passPer.getText()
-                                            ));
-                                            JOptionPane.showMessageDialog(this, "Persona creada!");
-                                            this.tf_nameper.setText("");
-                                            this.tf_ocupacion.setText("");
-                                            this.tf_salida.setText("");
-                                            this.tf_entrada.setText("");
-                                            this.tf_sueldoPer.setText("");
-                                            this.pf_passPer.setText("");
-                                            this.tf_semanas.setText("");
-                                            this.tf_IDper.setText("");
+        //try {
+        if (!this.tf_nameper.getText().equals("")) {
+            if (!this.tf_ocupacion.getText().equals("")) {
+                if (!this.tf_salida.getText().equals("")) {
+                    if (!this.tf_entrada.getText().equals("")) {
+                        if (!this.tf_sueldoPer.getText().equals("")) {
+                            if (!this.pf_passPer.getText().equals("")) {
+                                if (!this.tf_semanas.getText().equals("")) {
+                                    if (!this.tf_IDper.getText().equals("")) {
+                                        String sexo;
+                                        if (this.rb_mPer.isSelected()) {
+                                            sexo = "M";
+                                        } else {
+                                            sexo = "F";
                                         }
+                                        String estado;
+                                        if (this.rb_casadoPer.isSelected()) {
+                                            estado = "Casado";
+                                        } else if (this.rb_divorciadoPer.isSelected()) {
+                                            estado = "Divorciado;";
+                                        } else {
+                                            estado = "Sotero";
+                                        }
+                                        personal.add(new Personal(this.tf_ocupacion.getText(), Integer.parseInt(this.tf_entrada.getText()),
+                                                Integer.parseInt(this.tf_salida.getText()),
+                                                this.jDateChooser1.getDate(), Integer.parseInt(this.tf_semanas.getText()),
+                                                this.tf_nameper.getText(), Integer.parseInt(this.tf_IDper.getText()),
+                                                sexo, estado, this.pf_passPer.getText(), Float.parseFloat(this.tf_sueldoPer.getText())
+                                        ));
+                                        JOptionPane.showMessageDialog(this, "Personal creado!");
+                                        this.tf_nameper.setText("");
+                                        this.tf_ocupacion.setText("");
+                                        this.tf_salida.setText("");
+                                        this.tf_entrada.setText("");
+                                        this.tf_sueldoPer.setText("");
+                                        this.pf_passPer.setText("");
+                                        this.tf_semanas.setText("");
+                                        this.tf_IDper.setText("");
+                                        refreshUsuarios();
+                                        refreshPer();
                                     }
                                 }
                             }
@@ -1432,9 +1675,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     }
                 }
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocurrió un error y no se creó el contacto");
         }
+        //} catch (Exception e) {
+        //JOptionPane.showMessageDialog(this, "Ocurrió un error y no se creó el contacto");
+        //}
     }//GEN-LAST:event_jb_agregarPerMouseClicked
 
     private void jb_salircrearPerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salircrearPerMouseClicked
@@ -1444,13 +1688,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jb_agregarFamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarFamMouseClicked
         try {
-            if (!this.tf_nameFam.equals("")) {
-                if (!this.tf_jobFam.equals("")) {
-                    if (!this.tf_IDFam.equals("")) {
-                        if (!this.tf_pesoFam.equals("")) {
-                            if (!this.tf_alturaFam.equals("")) {
-                                if (!this.pf_passFam.equals("")) {
-                                    if (!this.tf_IDFam.equals("")) {
+            if (!this.tf_nameFam.getText().equals("")) {
+                if (!this.tf_jobFam.getText().equals("")) {
+                    if (!this.tf_IDFam.getText().equals("")) {
+                        if (!this.tf_pesoFam.getText().equals("")) {
+                            if (!this.tf_alturaFam.getText().equals("")) {
+                                if (!this.pf_passFam.getText().equals("")) {
+                                    if (!this.tf_IDFam.getText().equals("")) {
                                         String sexo;
                                         if (this.rb_mFam.isSelected()) {
                                             sexo = "M";
@@ -1503,6 +1747,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                             this.pf_passFam.setText("");
                                             this.tf_IDFam.setText("");
                                             refreshFam();
+                                            refreshUsuarios();
                                         }
                                     }
                                 }
@@ -1524,26 +1769,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jb_modSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modSaveMouseClicked
 
         try {
-            if (!this.tf_nameFam1.equals("")) {
-                ((Familiar) modelFam.getSelectedItem()).setName(tf_nameFam1.getText());
+            if (!this.tf_nameFam1.getText().equals("")) {
+                ((Familiar) modelFamOnly.getSelectedItem()).setName(tf_nameFam1.getText());
             }
-            if (!this.tf_jobFam1.equals("")) {
-                ((Familiar) modelFam.getSelectedItem()).setTrabajo(tf_jobFam1.getText());
+            if (!this.tf_jobFam1.getText().equals("")) {
+                ((Familiar) modelFamOnly.getSelectedItem()).setTrabajo(tf_jobFam1.getText());
             }
-            if (!this.tf_IDFam1.equals("")) {
-                ((Familiar) modelFam.getSelectedItem()).setTrabajo(tf_IDFam1.getText());
+            if (!this.tf_IDFam1.getText().equals("")) {
+                ((Familiar) modelFamOnly.getSelectedItem()).setTrabajo(tf_IDFam1.getText());
             }
-            if (!this.tf_pesoFam1.equals("")) {
-                ((Familiar) modelFam.getSelectedItem()).setPeso(Integer.parseInt(tf_pesoFam1.getText()));
+            if (!this.tf_pesoFam1.getText().equals("")) {
+                ((Familiar) modelFamOnly.getSelectedItem()).setPeso(Integer.parseInt(tf_pesoFam1.getText()));
             }
-            if (!this.tf_alturaFam1.equals("")) {
-                ((Familiar) modelFam.getSelectedItem()).setAltura(Integer.parseInt(tf_alturaFam1.getText()));
+            if (!this.tf_alturaFam1.getText().equals("")) {
+                ((Familiar) modelFamOnly.getSelectedItem()).setAltura(Integer.parseInt(tf_alturaFam1.getText()));
             }
-            if (!this.pf_passFam1.equals("")) {
-                ((Familiar) modelFam.getSelectedItem()).setPassword(pf_passFam1.getText());
+            if (!this.pf_passFam1.getText().equals("")) {
+                ((Familiar) modelFamOnly.getSelectedItem()).setPassword(pf_passFam1.getText());
             }
-            if (!this.tf_IDFam1.equals("")) {
-                ((Familiar) modelFam.getSelectedItem()).setID(Integer.parseInt(tf_IDFam1.getText()));
+            if (!this.tf_IDFam1.getText().equals("")) {
+                ((Familiar) modelFamOnly.getSelectedItem()).setID(Integer.parseInt(tf_IDFam1.getText()));
             }
             String sexo;
             if (this.rb_mFam1.isSelected()) {
@@ -1551,7 +1796,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             } else {
                 sexo = "F";
             }
-            ((Familiar) modelFam.getSelectedItem()).setSexo(sexo);
+            ((Familiar) modelFamOnly.getSelectedItem()).setSexo(sexo);
             String estado;
             if (this.rb_casadoFam1.isSelected()) {
                 estado = "Casado";
@@ -1560,7 +1805,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             } else {
                 estado = "Sotero";
             }
-            ((Familiar) modelFam.getSelectedItem()).setEstado_civil(estado);
+            ((Familiar) modelFamOnly.getSelectedItem()).setEstado_civil(estado);
             boolean agregar = true;
             if (agregar == true) {
 
@@ -1580,7 +1825,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_modSaveMouseClicked
 
     private void jb_salirmodFamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirmodFamMouseClicked
-        // TODO add your handling code here:
+        this.ventanaModFam.setVisible(false);
+        jFrame1.setVisible(true);
     }//GEN-LAST:event_jb_salirmodFamMouseClicked
 
     private void jb_modFamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modFamMouseClicked
@@ -1595,28 +1841,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jb_modsalvarPerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modsalvarPerMouseClicked
         try {
-            if (!this.tf_nameper1.equals("")) {
+            if (!this.tf_nameper1.getText().equals("")) {
                 ((Personal) modelFam.getSelectedItem()).setName(tf_nameper1.getText());
             }
-            if (!this.tf_ocupacion1.equals("")) {
+            if (!this.tf_ocupacion1.getText().equals("")) {
                 ((Personal) modelFam.getSelectedItem()).setOcupacion(tf_ocupacion1.getText());
             }
-            if (!this.tf_salida1.equals("")) {
+            if (!this.tf_salida1.getText().equals("")) {
                 ((Personal) modelFam.getSelectedItem()).setSalida(Integer.parseInt(tf_salida1.getText()));
             }
-            if (!this.tf_entrada1.equals("")) {
+            if (!this.tf_entrada1.getText().equals("")) {
                 ((Personal) modelFam.getSelectedItem()).setEntrada(Integer.parseInt(tf_entrada1.getText()));
             }
-            if (!this.tf_sueldoPer1.equals("")) {
+            if (!this.tf_sueldoPer1.getText().equals("")) {
                 ((Personal) modelFam.getSelectedItem()).setSueldo(Integer.parseInt(tf_sueldoPer1.getText()));
             }
-            if (!this.pf_passPer1.equals("")) {
+            if (!this.pf_passPer1.getText().equals("")) {
                 ((Personal) modelFam.getSelectedItem()).setPassword(pf_passPer1.getText());
             }
-            if (!this.tf_semanas1.equals("")) {
+            if (!this.tf_semanas1.getText().equals("")) {
                 ((Personal) modelFam.getSelectedItem()).setSemanasTrabajando(Integer.parseInt(tf_semanas1.getText()));
             }
-            if (!this.tf_IDper1.equals("")) {
+            if (!this.tf_IDper1.getText().equals("")) {
                 ((Personal) modelFam.getSelectedItem()).setID(Integer.parseInt(tf_IDper1.getText()));
             }
             String sexo;
@@ -1644,7 +1890,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             this.pf_passPer1.setText("");
             this.tf_semanas1.setText("");
             this.tf_IDper1.setText("");
-
+            refreshPer();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrió un error y no se modificó");
         }
@@ -1672,7 +1918,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_tallaActionPerformed
 
     private void jb_zapatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_zapatoMouseClicked
-        // TODO add your handling code here:
+
+        Objeto ob = new Zapato(this.tf_talla.getText(), this.tf_tipo.getText(), Integer.parseInt(this.tf_confort.getText()),
+                this.tf_color.getText(), this.tf_desc.getText(), this.tf_marca.getText(), this.tf_size.getText(),
+                Integer.parseInt(tf_calidad.getText()), Float.parseFloat(tf_precio.getText()), ((Familiar) dueño.getModel().getSelectedItem())
+        );
+        ((Familiar) dueño.getModel().getSelectedItem()).getObjects().add(ob);
+        crearZapato.setVisible(false);
     }//GEN-LAST:event_jb_zapatoMouseClicked
 
     private void jb_listFamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listFamMouseClicked
@@ -1689,6 +1941,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.jFrame1.dispose();
         refreshUsuarios();
         DefaultComboBoxModel model = (DefaultComboBoxModel) cb_listaFam.getModel();
+        this.jComboBox2.setModel(model);
         mensajeria.pack();
         this.mensajeria.setVisible(true);
     }//GEN-LAST:event_enviarMensajeMouseClicked
@@ -1700,14 +1953,123 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         try {
-            logged.getMensajes().add(new Mensaje(tf_asunto.getText(), ta_cuerpo.getText(), new Date(), logged, (Persona)this.cb_listaFam.getSelectedItem()));
-            ((Persona)this.cb_listaFam.getSelectedItem()).getMensajes().add(new Mensaje(tf_asunto.getText(), ta_cuerpo.getText(), new Date(), logged, (Persona)this.cb_listaFam.getSelectedItem()));
+            //logged.getMensajes().add(new Mensaje(tf_asunto.getText(), ta_cuerpo.getText(), new Date(), logged, (Persona)this.cb_listaFam.getSelectedItem()));
+            Mensaje msg = new Mensaje(tf_asunto.getText(), ta_cuerpo.getText(), new Date(), logged, (Persona) this.cb_listaFam.getSelectedItem());
+
+            ((Persona) this.cb_listaFam.getSelectedItem()).getMensajes().add(new Mensaje(tf_asunto.getText(), ta_cuerpo.getText(), new Date(), logged, (Persona) this.cb_listaFam.getSelectedItem()));
+            if (logged.equals(Kim)) {
+                msg.cifradoCesar();
+                msg.setCifrado(true);
+            }
+            if (logged instanceof Familiar) {
+                if (((Familiar) logged).getRol().equals("Esposo")) {
+                    msg.cifradoCesar();
+                    msg.setCifrado(true);
+                }
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrió un error al enviar!");
         }
         this.mensajeria.dispose();
         jFrame1.setVisible(true);
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void salirMensajeriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMensajeriaMouseClicked
+        this.mensajeria.dispose();
+        this.jFrame1.setVisible(true);
+    }//GEN-LAST:event_salirMensajeriaMouseClicked
+
+    private void crearZapatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearZapatosMouseClicked
+        if (!this.tf_calidad.getText().equals("") && !this.tf_marca.getText().equals("")
+                && !this.tf_precio.getText().equals("") && !this.tf_color.getText().equals("")
+                && !this.tf_size.getText().equals("") && !this.tf_desc.getText().equals("")) {
+            crearZapato.pack();
+            this.crearZapato.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Faltan campos por llenar!");
+
+        }
+    }//GEN-LAST:event_crearZapatosMouseClicked
+
+    private void materialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_materialActionPerformed
+
+    private void tallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tallaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tallaActionPerformed
+
+    private void nuevaRopaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevaRopaMouseClicked
+        Objeto ob = new Ropa(this.talla.getText(), this.material.getText(), pais.getText(),
+                this.tf_color.getText(), this.tf_desc.getText(), this.tf_marca.getText(), this.tf_size.getText(),
+                Integer.parseInt(tf_calidad.getText()), Float.parseFloat(tf_precio.getText()), ((Familiar) dueño.getModel().getSelectedItem())
+        );
+        ((Familiar) dueño.getModel().getSelectedItem()).getObjects().add(ob);
+        ropa.setVisible(false);
+    }//GEN-LAST:event_nuevaRopaMouseClicked
+
+    private void crearRopaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearRopaMouseClicked
+        if (!this.tf_calidad.getText().equals("") && !this.tf_marca.getText().equals("")
+                && !this.tf_precio.getText().equals("") && !this.tf_color.getText().equals("")
+                && !this.tf_size.getText().equals("") && !this.tf_desc.getText().equals("")) {
+            ropa.pack();
+            this.ropa.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Faltan campos por llenar!");
+        }
+    }//GEN-LAST:event_crearRopaMouseClicked
+
+    private void rb_roomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_roomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_roomActionPerformed
+
+    private void agregarHogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarHogarMouseClicked
+        String lugar;
+        if (rb_sala.isSelected()) {
+            lugar = "Sala";
+        } else if (rb_cocina.isSelected()) {
+            lugar = "Cocina";
+        } else {
+            lugar = "Habitacion";
+        }
+        Objeto ob = new objetoHogar(Integer.parseInt(this.vida.getText()), lugar, instr.getText(), new Date(),
+                this.tf_color.getText(), this.tf_desc.getText(), this.tf_marca.getText(), this.tf_size.getText(),
+                Integer.parseInt(tf_calidad.getText()), Float.parseFloat(tf_precio.getText()), ((Familiar) dueño.getModel().getSelectedItem())
+        );
+        ((Familiar) dueño.getModel().getSelectedItem()).getObjects().add(ob);
+        hogar.setVisible(false);
+    }//GEN-LAST:event_agregarHogarMouseClicked
+
+    private void crearHogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearHogarMouseClicked
+        if (!this.tf_calidad.getText().equals("") && !this.tf_marca.getText().equals("")
+                && !this.tf_precio.getText().equals("") && !this.tf_color.getText().equals("")
+                && !this.tf_size.getText().equals("") && !this.tf_desc.getText().equals("")) {
+            hogar.pack();
+            this.hogar.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Faltan campos por llenar!");
+        }
+    }//GEN-LAST:event_crearHogarMouseClicked
+
+    private void jb_modPerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modPerMouseClicked
+        jFrame1.setVisible(false);
+        ventana_modPer.pack();
+        this.ventana_modPer.setVisible(true);
+    }//GEN-LAST:event_jb_modPerMouseClicked
+
+    private void jb_elimPerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_elimPerMouseClicked
+        personal.remove(perMembers.getSelectedItem());
+        refreshPer();
+    }//GEN-LAST:event_jb_elimPerMouseClicked
+
+    private void jb_elimFamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_elimFamMouseClicked
+        familiares.remove(famMembers.getSelectedItem());
+        refreshFam();
+    }//GEN-LAST:event_jb_elimFamMouseClicked
+
+    private void verMsgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verMsgMouseClicked
+
+    }//GEN-LAST:event_verMsgMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1745,23 +2107,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregarHogar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JComboBox<String> cb_fam;
     private javax.swing.JComboBox<String> cb_listaFam;
     private javax.swing.JComboBox<String> cb_per;
+    private javax.swing.JButton crearHogar;
+    private javax.swing.JButton crearRopa;
     private javax.swing.JFrame crearZapato;
+    private javax.swing.JButton crearZapatos;
+    private javax.swing.JComboBox<String> dueño;
     private javax.swing.JButton enviarMensaje;
+    private javax.swing.JComboBox<String> famMembers;
     private javax.swing.JFrame frame_tabla;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JFrame hogar;
+    private javax.swing.JTextField instr;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
@@ -1842,7 +2207,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1880,7 +2251,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jl_estadocivil;
     private javax.swing.JLabel jl_sexo;
     private java.awt.Label label1;
+    private javax.swing.JTextField material;
     private javax.swing.JFrame mensajeria;
+    private javax.swing.JButton nuevaRopa;
+    private javax.swing.JTextField pais;
+    private javax.swing.JComboBox<String> perMembers;
     private javax.swing.JPasswordField pf_pass;
     private javax.swing.JPasswordField pf_passFam;
     private javax.swing.JPasswordField pf_passFam1;
@@ -1890,6 +2265,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_casadoFam1;
     private javax.swing.JRadioButton rb_casadoPer;
     private javax.swing.JRadioButton rb_casadoPer1;
+    private javax.swing.JRadioButton rb_cocina;
     private javax.swing.JRadioButton rb_divorciadoFam;
     private javax.swing.JRadioButton rb_divorciadoFam1;
     private javax.swing.JRadioButton rb_divorciadoPer;
@@ -1902,13 +2278,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_mFam1;
     private javax.swing.JRadioButton rb_mPer;
     private javax.swing.JRadioButton rb_mPer1;
+    private javax.swing.JRadioButton rb_room;
+    private javax.swing.JRadioButton rb_sala;
     private javax.swing.JRadioButton rb_solteroFam;
     private javax.swing.JRadioButton rb_solteroFam1;
     private javax.swing.JRadioButton rb_solteroPer;
     private javax.swing.JRadioButton rb_solteroPer1;
+    private javax.swing.JFrame ropa;
+    private javax.swing.JButton salirMensajeria;
     private javax.swing.JTextArea ta_cuerpo;
     private javax.swing.JTable tabla_fam;
     private javax.swing.JTable tabla_mensajes;
+    private javax.swing.JTextField talla;
     private javax.swing.JTextField tf_IDFam;
     private javax.swing.JTextField tf_IDFam1;
     private javax.swing.JTextField tf_IDper;
@@ -1949,14 +2330,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JFrame ventanaCrearPersonal;
     private javax.swing.JFrame ventanaModFam;
     private javax.swing.JFrame ventana_modPer;
+    private javax.swing.JButton verMsg;
+    private javax.swing.JTextField vida;
     // End of variables declaration//GEN-END:variables
     private ArrayList<Familiar> familiares;
     private ArrayList<Personal> personal;
     public Persona logged;
     public Familiar Kim;
     public DefaultComboBoxModel modelFam;
+    public DefaultComboBoxModel modelFamOnly;
     DefaultTableModel modelo;
     DefaultTableModel mensajes;
+    DefaultComboBoxModel modelPerOnly;
 
     public boolean usuarioExistente(String username) {
         for (Familiar familiar : familiares) {
@@ -2053,12 +2438,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     public void refreshFam() {
-        
-        modelFam = (DefaultComboBoxModel) this.cb_listaFam.getModel();
-        modelFam.removeAllElements();
+
+        modelFamOnly = (DefaultComboBoxModel) this.cb_listaFam.getModel();
+        modelFamOnly.removeAllElements();
         for (Familiar familiar : familiares) {
-            modelFam.addElement(familiar);
+            modelFamOnly.addElement(familiar);
         }
+        famMembers.setModel(modelFamOnly);
+        cb_listaFam.setModel(modelFamOnly);
+        this.dueño.setModel(modelFamOnly);
     }
 
     public void refreshTable() {
@@ -2070,13 +2458,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 fam.getName(),
                 fam.getAge(),
                 fam.getID(),
-                fam.getClass().getSimpleName(),};
+                fam.getClass().getSimpleName()};
             modelo = (DefaultTableModel) tabla_fam.getModel();
             modelo.addRow(newrow);
             tabla_fam.setModel(modelo);
         }
     }
-    
+
     public void refreshUsuarios() {
 
         modelFam = (DefaultComboBoxModel) this.cb_listaFam.getModel();
@@ -2089,20 +2477,44 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         modelFam.addElement(Kim);
     }
-    
+
     public void refreshMensajes() {
-          while (mensajes.getRowCount() != 0) {
+        while (mensajes.getRowCount() != 0) {
             mensajes.removeRow(0);
         }
         for (Mensaje msg : logged.getMensajes()) {
+            if (logged.equals(Kim)) {
+                if (msg.isCifrado() == true) {
+                    msg.descifradoCesar();
+                }
+            }
+            if (logged instanceof Familiar) {
+                if (((Familiar) logged).getRol().equals("Esposo")) {
+                    if (msg.isCifrado() == true) {
+                        msg.descifradoCesar();
+                    }
+                }
+            }
+            String ms = msg.getCuerpo();
             Object[] newrow = {
                 msg.getEmisor(),
                 msg.getFecha(),
                 msg.getTitulo(),
-                msg.getReceptor()};
+                msg.getReceptor(),
+                ms};
             mensajes = (DefaultTableModel) tabla_mensajes.getModel();
             mensajes.addRow(newrow);
-            tabla_mensajes.setModel(modelo);
+            tabla_mensajes.setModel(mensajes);
         }
     }
+
+    public void refreshPer() {
+        modelPerOnly = (DefaultComboBoxModel) this.perMembers.getModel();
+        modelPerOnly.removeAllElements();
+        for (Personal per : personal) {
+            modelFamOnly.addElement(per);
+        }
+        perMembers.setModel(modelPerOnly);
+    }
+
 }

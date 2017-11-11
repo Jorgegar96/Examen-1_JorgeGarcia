@@ -13,7 +13,7 @@ import java.awt.Color;
  */
 public class Objeto {
      //color, descripción, marca, tamaño, calidad (escala de 1 a 10), precio y dueño
-    private Color color;
+    private String color;
     private String descripcion;
     private String marca;
     private String tamaño;
@@ -24,7 +24,7 @@ public class Objeto {
     public Objeto() {
     }
 
-    public Objeto(Color color, String descripcion, String marca, String tamaño, int calidad, float precio, Familiar dueño) {
+    public Objeto(String color, String descripcion, String marca, String tamaño, int calidad, float precio, Familiar dueño) {
         this.color = color;
         this.descripcion = descripcion;
         this.marca = marca;
@@ -34,11 +34,11 @@ public class Objeto {
         this.dueño = dueño;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

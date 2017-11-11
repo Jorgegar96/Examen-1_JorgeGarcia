@@ -58,7 +58,7 @@ public class Persona {
     }
 
     public void setAge() {
-        this.age = (int)(fecha_nacimiento.getTime() - (new Date()).getTime() / (1000*60*60*24*365));
+        this.age = (int)((fecha_nacimiento.getTime() - (new Date()).getTime() ) * -1 / (1000*60*60*24*365));
     }
 
     public int getID() {

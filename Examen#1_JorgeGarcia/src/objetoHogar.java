@@ -23,7 +23,7 @@ public class objetoHogar extends Objeto{
         super();
     }
 
-    public objetoHogar(int tiempo_vida, String area_casa, String instrucciones, Date fecha_compra, Color color, String descripcion, String marca, String tamaño, int calidad, float precio, Familiar dueño) {
+    public objetoHogar(int tiempo_vida, String area_casa, String instrucciones, Date fecha_compra, String color, String descripcion, String marca, String tamaño, int calidad, float precio, Familiar dueño) {
         super(color, descripcion, marca, tamaño, calidad, precio, dueño);
         this.tiempo_vida = tiempo_vida;
         this.area_casa = area_casa;
